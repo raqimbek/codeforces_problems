@@ -3,6 +3,8 @@ import java.util.HashSet;
 
 public class Problem {
   public static void main(String[] a) {
+    System.out.println("Please input a username. If your username contains an odd number of distinct characters, you must be a male. Otherwise you must be a female.");
+
     Scanner sc = new Scanner(System.in);
     String input = sc.nextLine();
     HashSet<Character> inputChars = new HashSet<>();
@@ -23,9 +25,9 @@ public class Problem {
     System.out.println("out of the loop");
     System.out.println("distinct characters number: " + distinctCharNum);
     if (distinctCharNum%2 != 0) {
-      System.out.println("IGNORE HIM!");
+      System.out.println("You must be a male");
     } else {
-      System.out.println("CHAT WITH HER!");
+      System.out.println("You must be a female");
     }
   }
 }
