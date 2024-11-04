@@ -12,7 +12,11 @@ public class Problem {
     for (int i = 0; i < reqNum; i++) {
       String input = sc.nextLine();
       if (names.contains(input)) {
-        input = generateName(input, 1, names);
+        int j = 1;
+        while (names.contains(input + j)) {
+          j++;
+        }
+        input += j;
         output += input + "\n";
       } else {
         output += "OK\n";
@@ -22,16 +26,5 @@ public class Problem {
     }
 
     System.out.println(output);
-  }
-
-  private static String generateName(String name, int i, HashSet<String> names) {
-    String generatedName = "";
-    if (names.contains(name + i)) {
-      generatedName = generateName(name, ++i, names);
-      return generatedName;
-    }
-
-    generatedName = name + i;
-    return generatedName;
   }
 }
