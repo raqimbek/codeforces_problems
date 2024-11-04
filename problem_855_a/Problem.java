@@ -17,7 +17,7 @@ public class Problem {
         continue;
       }
 
-      output += "YES!";
+      output += "YES";
       if (i != possessionTimes - 1) {
         output += "\n";
       }
