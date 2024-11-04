@@ -17,10 +17,7 @@ public class Problem {
         continue;
       }
 
-      output += "YES";
-      if (i != possessionTimes - 1) {
-        output += "\n";
-      }
+      output += "YES\n";
     }
 
     System.out.println(output);
