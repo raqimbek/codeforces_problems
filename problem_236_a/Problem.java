@@ -24,9 +24,9 @@ public class Problem {
     System.out.println("out of the loop");
     System.out.println("indistinct characters number: " + indistinctCharNum);
     if (indistinctCharNum%2 != 0) {
-      System.out.println("IGNORE HIM!");
-    } else {
       System.out.println("CHAT WITH HER!");
+    } else {
+      System.out.println("IGNORE HIM!");
     }
   }
 }
