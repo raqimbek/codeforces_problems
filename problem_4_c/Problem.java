@@ -1,10 +1,10 @@
 import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.LinkedHashMap;
 
 public class Problem {
   public static void main(String[] a) {
     String output = "";
-    TreeMap <String, Integer> names = new TreeMap<>();
+    LinkedHashMap <String, Integer> names = new LinkedHashMap<>();
     Scanner sc = new Scanner(System.in);
     int reqNum = sc.nextInt();
     sc.nextLine();
