@@ -1,10 +1,10 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Problem {
   public static void main(String[] a) {
     String output = "";
-    ArrayList <String> names = new ArrayList<>();
+    TreeMap <String, Integer> names = new TreeMap<>();
     Scanner sc = new Scanner(System.in);
     int reqNum = sc.nextInt();
     sc.nextLine();
@@ -13,18 +13,15 @@ public class Problem {
       reqNum--;
       String input = sc.nextLine();
 
-      if (!names.contains(input)) {
-        names.add(input);
-        output += "OK\n";
+      if (names.containsKey(input)) {
+        int duplicateNum = names.get(input) + 1;
+        names.put(input, duplicateNum);
+        output += input + duplicateNum + "\n";
         continue;
       }
 
-      int i = 0;
-      while (names.contains(input + ++i)) {}
-      input += i;
-
-      names.add(input);
-      output += input + "\n";
+      names.put(input, 0);
+      output += "OK\n";
     }
 
     System.out.println(output);
