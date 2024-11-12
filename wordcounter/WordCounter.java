@@ -13,11 +13,7 @@ public class WordCounter {
          .mapToObj(c -> (char) c)
          .toList().forEach(c -> {
            if (letters.contains(c)) {
-             if (letterCounter.get(c) != null) {
-               letterCounter.put(c, letterCounter.get(c)+1);
-             } else {
-               letterCounter.put(c,1);
-             }
+             letterCounter.put(c, Optional.ofNullable(letterCounter.get(c)).orElse(0)+1);
            }
          });
 
