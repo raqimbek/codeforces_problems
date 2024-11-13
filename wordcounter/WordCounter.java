@@ -11,12 +11,12 @@ public class WordCounter {
 
     input.toLowerCase().chars()
          .mapToObj(c -> (char) c)
-         .toList().forEach(c -> {
-           if (letters.contains(c)) {
-             letterCounter.put(c, Optional.ofNullable(letterCounter.get(c)).orElse(0)+1);
-           }
-         });
+         .filter(c -> letters.contains(c)).toList()
+         .forEach(c -> letterCounter.put(c,
+           Optional.ofNullable(letterCounter.get(c))
+           .orElse(0)+1));
 
-    letterCounter.entrySet().forEach(e -> System.out.println(e.getKey() + " - " + e.getValue()));
+    letterCounter.entrySet()
+      .forEach(e -> System.out.println(e.getKey() + " - " + e.getValue()));
   }
 }
