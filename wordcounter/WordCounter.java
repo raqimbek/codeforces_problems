@@ -11,10 +11,10 @@ public class WordCounter {
     var matcher = pattern.matcher(input);
 
     var word = (matcher.replaceAll(""));
-    var letterMap = word.chars()
+    var letterMap = word.toLowerCase().chars()
         .mapToObj(c -> Character.valueOf((char) c))
         .reduce(
-          new HashMap<Character, Integer>(),
+          new TreeMap<Character, Integer>(),
           (a, c) -> {
             if (a.containsKey(c)) {
               a.put(c, a.get(c) + 1);
