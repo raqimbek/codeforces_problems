@@ -1,5 +1,6 @@
-import java.util.*;
-import java.util.regex.*;
+import java.util.TreeMap;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class WordCounter {
 
@@ -7,26 +8,25 @@ public class WordCounter {
     var scanner = new Scanner(System.in);
     var input = scanner.nextLine();
 
-    var pattern = Pattern.compile("[^a-zA-Z]");
-    var matcher = pattern.matcher(input);
-
-    var word = (matcher.replaceAll(""));
-    var letterMap = word.toLowerCase().chars()
+    input.toLowerCase().chars()
+        .filter(c -> Character.isAlphabetic(c))
         .mapToObj(c -> Character.valueOf((char) c))
-        .reduce(
-          new TreeMap<Character, Integer>(),
-          (a, c) -> {
-            if (a.containsKey(c)) {
-              a.put(c, a.get(c) + 1);
-              return a;
-            }
-
-            a.put(c, 1);
-
-            return a;
-          },
-          (m1,m2)  -> {m1.putAll(m2); return m1;}
+        .collect(
+           Collectors.toMap(
+              l -> l,
+              l -> String.valueOf(l),
+              (l1, l2) ->
+                 new StringBuilder()
+                     .append(l1)
+                     .append(l2)
+                     .toString()
+              ,
+              () -> new TreeMap<Character, String>()
+           )
+        )
+        .entrySet()
+        .forEach(e ->
+           System.out.println(e.getKey() + ": " + e.getValue().length())
         );
-    letterMap.forEach((l, c) -> System.out.println(l + " - " + c));
   }
 }
