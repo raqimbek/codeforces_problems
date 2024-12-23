@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -21,38 +19,15 @@ public class Problem {
         subtractions.add(j);
       }
 
-      System.out.print("subtractions list: ");
-      System.out.println(subtractions);
 
-      System.out.print("subtractions.size() - ");
-      System.out.println(subtractions.size());
       for (int k = 0; k < subtractions.size(); k++) {
-        System.out.println("inside first loop. current value of k = " + k);
-        System.out.print("subtractions.get(" + k + ") - ");
-        System.out.println(subtractions.get(k));
-
         int a = subtractions.get(k);
-        System.out.print("a = ");
-        System.out.println(a);
-
-        System.out.print("n - a = ");
-        System.out.println(n - a);
-        System.out.print("subtractions.contains(");
-        System.out.print(n - a);
-        System.out.print(") = ");
-        System.out.println(subtractions.contains(n - a));
 
         if (subtractions.contains(n - a)) {
-          var list = List.of(a, n - a);
-          System.out.print("list just created: ");
-          System.out.println(list);
-          pairs.add(list);
+          pairs.add(List.of(a, n - a));
         }
       }
 
-      System.out.print("final pairs: ");
-      System.out.println(pairs);
-      System.out.print("pairs.size() - ");
       System.out.println(pairs.size());
     }
   }
