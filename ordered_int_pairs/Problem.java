@@ -6,6 +6,7 @@ public class Problem {
   public static void main(String[] args) {
     var scanner = new Scanner(System.in);
     var t = Integer.valueOf(scanner.nextLine());
+    List<Integer> pairAmountList = new ArrayList<>();
 
     if (t < 1 || t > 99) return;
 
@@ -28,7 +29,8 @@ public class Problem {
         }
       }
 
-      System.out.println(pairs.size());
+      pairAmountList.add(pairs.size());
     }
+    pairAmountList.forEach(System.out::println);
   }
 }
