@@ -10,7 +10,7 @@ public class Problem {
                           .map(Integer::valueOf)
                           .collect(Collectors.toList());
 
-    var size = colorList.stream()
+    var shoesNum = colorList.stream()
              .filter(i -> Collections.frequency(colorList, i) > 1)
              .collect(
                Collectors.groupingBy(
@@ -21,11 +21,7 @@ public class Problem {
              .entrySet()
              .stream()
              .map(e -> e.getValue().intValue() - 1)
-             .reduce(0, (a, n) -> {
-               System.out.println("n = " + n);
-               System.out.println("a = " + a);
-               return a + n;
-             });
-    System.out.println(size);
+             .reduce(0, (a, n) -> a + n);
+    System.out.println(shoesNum);
   }
 }
