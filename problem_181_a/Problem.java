@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Problem {
@@ -18,22 +19,21 @@ public class Problem {
 
     if (n < 2 || m > 100) return;
 
-    Map<Integer, Integer> table = new HashMap<>();
+    List<List<String>> table = new ArrayList<>();
     
     for (var i = 0; i < n; i++) {
-      var row = Arrays.stream(scanner.nextLine().split(" "))
+      var row = Arrays.stream(scanner.nextLine().split(""))
                       .filter(c -> c.equals("*") || c.equals("."))
                       .limit(m)
                       .toList();
 
       System.out.println(row);
 
-      System.out.println("m = " + m);
-      System.out.print("row.size() = ");
-      System.out.println(row.size());
-
       if (row.size() != m) return;
-      System.out.println("row size is acceptable");
+
+      table.add(row);
     }
+
+    System.out.println(table);
   }
 }
