@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.HashMap;
 
 public class Problem {
@@ -32,6 +33,8 @@ public class Problem {
     if (n < 2 || m > 100) return;
 
     List<List<String>> table = new ArrayList<>();
+    Map<List<String>, List<Integer>> possibleSideMap = new HashMap<>();
+    Map<Integer, Integer> partialSideMap = new HashMap<>();
     
     for (var i = 0; i < n; i++) {
       var row = Arrays.asList(scanner.nextLine().split(""));
@@ -42,8 +45,59 @@ public class Problem {
       if (!RowIsProper && row.size() != m) return;
 
       // table.add(row);
+
+      if(row.contains("*")) {
+        if (row.stream().filter(c -> c.equals("*")).count() >= 2) {
+          int first = -1;
+          int last = -1;
+
+          for(var j = 0; j < row.size(); j++) {
+            if (row.get(j).equals("*")) {
+              if (first != -1) {
+                last = j;
+                continue;
+              }
+              first = j;
+            }
+          }
+          
+          possibleSideMap.put(row, List.of(first, last));
+          continue;
+        }
+/*
+// temp start
+      }
     }
     
-    
+    System.out.print("possibleSideMap: ");
+    System.out.println(possibleSideMap);
+
+// temp end
+*/
+
+        // partial side
+        for(var j = 0; j < row.size(); j++) {
+          if (row.get(j).equals("*")) {
+            var endPoint = Integer.valueOf(j);
+            var possibleSideNum = possibleSideMap.entrySet()
+                           .stream()
+                           .filter(e -> e.getValue()
+                                         .stream()
+                                         .filter(ep -> ep.equals(endPoint))
+                                         .findFirst()
+                                         .isPresent()
+                           )
+                           .count();
+            for (var k = 0; k < possibleSideNum; k++) {
+              partialSideMap.put(i, j);
+            }
+          }
+        }
+      }
+    }
+    System.out.print("partialSideMap: ");
+    System.out.println(partialSideMap);
+    System.out.print("possibleSideMap: ");
+    System.out.println(possibleSideMap);
   }
 }
