@@ -15,29 +15,12 @@ public class Problem {
     var pairsNum = 0;
 
     for (var b = 0; b <= n && b <= m; b++) {
-      System.out.print("n = ");
-      System.out.println(n);
-      System.out.print("b = ");
-      System.out.println(b);
-      System.out.print("Math.sqrt(n - b) = ");
-      System.out.print("Math.sqrt(" + n + " - " + b + ") = ");
-      System.out.println(Math.sqrt(n - b));
-      System.out.print("Math.sqrt(n - b) >= 0");
-      System.out.print(" <=> ");
-      System.out.print("Math.sqrt(" + n + " - " + b + ") >= 0: ");
-      System.out.println(Math.sqrt(n - b) >= 0);
       var a = Math.sqrt(n - b);
       if (a >= 0) {
-        System.out.print("a = ");
-        System.out.println(a);
-        System.out.print("Math.sqrt(m - a) == b");
-        System.out.print(" <=> ");
-        System.out.print("Math.sqrt(" + m + " - " + a + ") == " + b + ": ");
-        System.out.println(Math.sqrt(m - a) == b);
         if (Math.sqrt(m - a) == b) pairsNum++;
-        System.out.print("pairsNum = ");
-        System.out.println(pairsNum);
       }
     }
+ 
+    System.out.println(pairsNum);
   }
 }
