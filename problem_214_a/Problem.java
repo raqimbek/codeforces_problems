@@ -14,38 +14,30 @@ public class Problem {
 
     var pairsNum = 0;
 
-    for (int a = 0, b = 0; a <= n && a <= m && b <= n && b <= m; a++, b++) {
-      System.out.print("a = ");
-      System.out.println(a);
+    for (var b = 0; b <= n && b <= m; b++) {
+      System.out.print("n = ");
+      System.out.println(n);
       System.out.print("b = ");
       System.out.println(b);
-      System.out.print("a <= n: ");
-      System.out.println(a <= n);
-      System.out.print(a + " <= " + n + ": ");
-      System.out.println(a <= n);
-      System.out.print("a <= m: ");
-      System.out.println(a <= m);
-      System.out.print(a + " <= " + m + ": ");
-      System.out.println(a <= m);
-      System.out.print("b <= n: ");
-      System.out.println(b <= n);
-      System.out.print(b + " <= " + n + ": ");
-      System.out.println(b <= n);
-      System.out.print("b <= m: ");
-      System.out.println(b <= m);
-      System.out.print(b + " <= " + m + ": ");
-      System.out.println(b <= m);
-      System.out.print("a*a + b == n: ");
-      System.out.println(a*a + b == n);     
-      System.out.print(a + "*" + a + " + " + b + " == " + n + ": ");
-      System.out.println(a*a + b == n);
-      System.out.print("b*b + a == m: ");
-      System.out.println(b*b + a == m);
-      System.out.print(b + "*" + b + " + " + a + " == " + m + ": ");
-      System.out.println(b*b + a == m);
-      if (a*a + b == n && a + b*b == m) pairsNum++;
-      System.out.print("pairsNum = ");
-      System.out.println(pairsNum);
+      System.out.print("Math.sqrt(n - b) = ");
+      System.out.print("Math.sqrt(" + n + " - " + b + ") = ");
+      System.out.println(Math.sqrt(n - b));
+      System.out.print("Math.sqrt(n - b) >= 0");
+      System.out.print(" <=> ");
+      System.out.print("Math.sqrt(" + n + " - " + b + ") >= 0: ");
+      System.out.println(Math.sqrt(n - b) >= 0);
+      var a = Math.sqrt(n - b);
+      if (a >= 0) {
+        System.out.print("a = ");
+        System.out.println(a);
+        System.out.print("Math.sqrt(m - a) == b");
+        System.out.print(" <=> ");
+        System.out.print("Math.sqrt(" + m + " - " + a + ") == " + b + ": ");
+        System.out.println(Math.sqrt(m - a) == b);
+        if (Math.sqrt(m - a) == b) pairsNum++;
+        System.out.print("pairsNum = ");
+        System.out.println(pairsNum);
+      }
     }
   }
 }
