@@ -10,7 +10,7 @@ public class Problem {
     var n = nums.get(0);
     var m = nums.get(1);
 
-    if (n <= 1 || m >= 1000) return;
+    if (n < 1 || m > 1000) return;
 
     var pairsNum = 0;
 
