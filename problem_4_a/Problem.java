@@ -9,7 +9,7 @@ public class Problem {
     }
 
     for (int i = 0, j = input; i <= input && j >= 0; i++, j--) {
-      if (i > 2 && j > 2 && (i + j) == input && i % 2 == 0 && j % 2 == 0) {
+      if (i > 0 && j > 0 && (i + j) == input && i % 2 == 0 && j % 2 == 0) {
         System.out.println("YES");
         return;
       }
