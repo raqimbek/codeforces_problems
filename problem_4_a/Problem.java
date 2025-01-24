@@ -9,10 +9,6 @@ public class Problem {
     }
 
     for (int i = 0, j = input; i <= input && j >= 0; i++, j--) {
-      System.out.print("i = ");
-      System.out.println(i);
-      System.out.print("j = ");
-      System.out.println(j);
       if (i > 2 && j > 2 && (i + j) == input && i % 2 == 0 && j % 2 == 0) {
         System.out.println("YES");
         return;
