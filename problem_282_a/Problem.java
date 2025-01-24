@@ -13,24 +13,11 @@ public class Problem {
 
       var statement = scanner.nextLine();
 
-      System.out.println("Debugging...");
-      System.out.print("statement: ");
-      System.out.println(statement);
-      System.out.print("!statement.equals(\"X++\"): ");
-      System.out.println(!statement.equals("X++"));
-      System.out.print("!statement.equals(\"++X\"): ");
-      System.out.println(!statement.equals("++X"));
-      System.out.print("!statement.equals(\"--X\"): ");
-      System.out.println(!statement.equals("--X"));
-      System.out.print("!statement.equals(\"X--\"): ");
-      System.out.println(!statement.equals("X--"));
-
       if (!statement.equals("X++")
           && !statement.equals("++X")
           && !statement.equals("X--")
           && !statement.equals("--X")
          ) {
-           System.out.println("wtf?");
            return;
          }
 
