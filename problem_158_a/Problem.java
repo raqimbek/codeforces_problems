@@ -26,14 +26,7 @@ public class Problem {
 
       var kth = scores.get(k);
 
-      System.out.println("Debugging...");
-      System.out.print("scores list: ");
-      System.out.println(scores);
-      System.out.print("k = ");
-      System.out.println(k);
-      System.out.print("kth = ");
-      System.out.println(kth);
-      passedParticipantsNum = scores.stream().filter(score -> {System.out.print("score > 0: "); System.out.println(score > 0); System.out.print("score >= kth: "); System.out.println(score >= kth); return score > 0 && score >= kth;}).peek(score -> {System.out.print("score: "); System.out.println(score);}).count();
+      passedParticipantsNum = scores.stream().filter(score -> score > 0 && score >= kth).count();
 
       System.out.println(passedParticipantsNum);
     } catch(NumberFormatException e) {
