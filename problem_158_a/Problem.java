@@ -24,7 +24,7 @@ public class Problem {
                          .map(Integer::valueOf)
                          .toList();
 
-      var kth = scores.get(k);
+      var kth = scores.get(k - 1);
 
       passedParticipantsNum = scores.stream().filter(score -> score > 0 && score >= kth).count();
 
