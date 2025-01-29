@@ -13,12 +13,6 @@ public class Problem {
       var row = (new ArrayList<>(Arrays.stream(scanner.nextLine().split(" ")).map(Integer::valueOf).toList()));
       var initIndex = row.stream()
          .reduce(0, (a, n) -> {if(n != 1) return ++a; else return a;});
-      System.out.print("initIndex = ");
-      System.out.println(initIndex);
-      System.out.print("row.size() = ");
-      System.out.println(row.size());
-      System.out.print("initIndex < row.size() = ");
-      System.out.println(initIndex < row.size());
       if (initIndex < row.size()) initCoordinates.put(i, initIndex);
       matrix.add(row);
     }
