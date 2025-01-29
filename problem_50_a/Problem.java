@@ -2,10 +2,7 @@ import java.util.Scanner;
 
 public class Problem {
   public static void main(String[] args) {
-    var scanner = new Scanner(System.in);
-    var inputArr = scanner.nextLine().split(" ");
-    var m = inputArr[0];
-    var n = inputArr[1];
-    System.out.println(Double.valueOf(Math.floor((Integer.valueOf(m)*Integer.valueOf(n))/2)).intValue());
+    var input = new Scanner(System.in).nextLine().split(" ");
+    System.out.println(Double.valueOf(Math.floor((Integer.valueOf(input[0])*Integer.valueOf(input[1]))/2)).intValue());
   }
 }
