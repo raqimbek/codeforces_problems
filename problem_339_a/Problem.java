@@ -1,8 +1,8 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Problem {
   public static void main(String[] args) {
-    var scanner = new Scanner(System.in);
-    
+    System.out.println(String.join("+", Arrays.stream(new Scanner(System.in).nextLine().split("\\+")).sorted().toList()));
   }
 }
