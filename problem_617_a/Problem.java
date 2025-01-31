@@ -13,7 +13,7 @@ public class Problem {
 
     if (x > 5) {
       answer += x / 5;
-      answer += check(x % 5);
+      if (x % 5 != 0) answer += check(x % 5);
     } else {
       answer++;
     }
