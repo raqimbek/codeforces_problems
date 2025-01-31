@@ -5,6 +5,7 @@ public class Problem {
     var scanner = new Scanner(System.in);
     var str1 = scanner.nextLine();
     var str2 = scanner.nextLine();
-    System.out.println(str1.compareToIgnoreCase(str2));
+    var result = str1.compareToIgnoreCase(str2);
+    System.out.println(result > 0 ? 1 : result < 0 ? -1 : result);
   }
 }
